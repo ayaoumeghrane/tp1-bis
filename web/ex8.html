@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 08 - Mini Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header, nav, main, article, aside, footer {
+            padding: 15px;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #555;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        article {
+            width: 65%;
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        article time {
+            font-size: 0.9em;
+            color: #666;
+        }
+        aside {
+            width: 30%;
+            background: #fffbe6;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="img/logo.png" alt="Logo du site">
+            <h1>Mon Mini Blog</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="articles">
+            <article>
+                <h2>Découvrir HTML5</h2>
+                <time datetime="2025-10-20">20 octobre 2025</time>
+                <p>
+                    HTML5 permet de structurer des pages web modernes et sémantiques.
+                    Il offre de nouvelles balises et une meilleure accessibilité pour le web d’aujourd’hui.
+                </p>
+                <a href="#">Lire plus</a>
+            </article>
+
+            <article>
+                <h2>CSS : Donner du style à vos pages</h2>
+                <time datetime="2025-10-21">21 octobre 2025</time>
+                <p>
+                    Les feuilles de style en cascade (CSS) apportent couleur, mise en page et harmonie
+                    à vos créations web. Apprenez à manipuler les sélecteurs et les propriétés.
+                </p>
+                <a href="#">Lire plus</a>
+            </article>
+        </section>
+
+        <aside>
+            <h3>À propos</h3>
+            <p>
+                Bienvenue sur mon mini blog ! Ici, je partage mes découvertes sur le développement web,
+                les bonnes pratiques et mes projets personnels.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        &copy; 2025 Mon Mini Blog — Tous droits réservés.
+    </footer>
+
+</body>
+</html>

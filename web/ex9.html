@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 09 - Accessibilité & Médias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+        header, main, footer {
+            padding: 15px;
+        }
+        a.skip-link {
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            background-color: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        a.skip-link:focus {
+            top: 10px;
+        }
+        nav a {
+            margin-right: 10px;
+        }
+        figure {
+            margin: 20px auto;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: #555;
+        }
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lien d'évitement pour accessibilité clavier -->
+    <a href="#main" class="skip-link">Aller au contenu</a>
+
+    <header>
+        <h1>Accessibilité & Médias</h1>
+        <nav>
+            <a href="#image">Image</a>
+            <a href="#audio">Audio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="image">
+            <h2>Image illustrative</h2>
+            <figure>
+                <img src="img/logo.png" alt="Logo fictif représentant le site ou l'article" width="200">
+                <figcaption>Logo utilisé pour illustrer notre exemple d’accessibilité.</figcaption>
+            </figure>
+        </section>
+
+        <section id="audio">
+            <h2>Extrait audio</h2>
+            <!-- Exemple avec une source fictive : -->
+            <audio controls>
+                <source src="media/extrait.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l’élément audio — audio non disponible.
+            </audio>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Exemple de page accessible.</p>
+    </footer>
+
+</body>
+</html>

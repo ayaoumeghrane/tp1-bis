@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 07 - Formulaire d'inscription</title>
+    <style>
+        form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        fieldset {
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 3px;
+            box-sizing: border-box;
+        }
+        .inline {
+            display: inline-block;
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Créer un compte</h1>
+
+    <form action="#" method="post">
+
+        <!-- Identité -->
+        <fieldset>
+            <legend>Identité</legend>
+
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="naissance">Date de naissance :</label>
+            <input type="date" id="naissance" name="naissance" min="1900-01-01" max="<?= date('Y-m-d') ?>" required>
+            <!-- Si tu n’utilises pas PHP, tu peux remplacer max par la date du jour manuellement -->
+        </fieldset>
+
+        <!-- Contact -->
+        <fieldset>
+            <legend>Contact</legend>
+
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" 
+                   pattern="^0[5-7]\d{8}$" 
+                   title="Le numéro doit commencer par 05, 06 ou 07 et contenir 10 chiffres au total (ex: 0612345678)" 
+                   required>
+
+            <label for="site">Site personnel :</label>
+            <input type="url" id="site" name="site" placeholder="https://exemple.com">
+        </fieldset>
+
+        <!-- Sécurité -->
+        <fieldset>
+            <legend>Sécurité</legend>
+
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" id="mdp" name="mdp" minlength="8" required>
+
+            <label for="confirm">Confirmation du mot de passe :</label>
+            <input type="password" id="confirm" name="confirm" minlength="8" required>
+        </fieldset>
+
+        <!-- Préférences -->
+        <fieldset>
+            <legend>Préférences</legend>
+
+            <label class="inline">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                S'abonner à la newsletter
+            </label>
+
+            <p>Rôle :</p>
+            <label class="inline">
+                <input type="radio" name="role" value="etudiant" required> Étudiant
+            </label>
+            <label class="inline">
+                <input type="radio" name="role" value="pro"> Professionnel
+            </label>
+        </fieldset>
+
+        <button type="submit">Créer le compte</button>
+    </form>
+
+    <script>
+        // Vérifie que les deux mots de passe sont identiques
+        const form = document.querySelector('form');
+        form.addEventListener('submit', e => {
+            const mdp = document.getElementById('mdp').value;
+            const confirm = document.getElementById('confirm').value;
+            if (mdp !== confirm) {
+                e.preventDefault();
+                alert('Les mots de passe ne correspondent pas.');
+            }
+        });
+    </script>
+</body>
+</html>
